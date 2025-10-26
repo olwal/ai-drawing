@@ -41,7 +41,7 @@ Built with the Cinder framework, this application allows users to draw naturally
 ### Class Hierarchy
 
 ```
-App (Cinder) → CinderApp → DrawingApp → AIDrawingApp
+App (Cinder) → CinderApp → DrawingApp → App
 ```
 
 
@@ -126,14 +126,14 @@ App (Cinder) → CinderApp → DrawingApp → AIDrawingApp
   - REST API for local communication  
   - Runs locally, no cloud dependencies  
 
-- **[OllamaClientCinder](https://github.com/olwal/OllamaClient)** — Cross-framework C++ client for Ollama API  
+- **[OllamaClientCinder](https://github.com/olwal/ollama-client)** — Cross-framework C++ client for Ollama API  
   - Works with Cinder and OpenFrameworks  
   - Supports text and vision models  
   - Async/sync APIs for flexible integration  
   - Windows support via WinHTTP  
   - No external dependencies (includes Base64 + JSON)  
 
-- **[StreamDiffusionSpoutService](https://github.com/olwal/StreamDiffusionSpoutService)** — Real-time image generation server  
+- **[StreamDiffusionSpoutService](https://github.com/olwal/streamdiffusion-spout-service)** — Real-time image generation server  
   - Receives **drawing image + prompt**  
   - Performs **real-time image-to-image diffusion**  
   - GPU-accelerated output shared via Spout  
@@ -157,7 +157,7 @@ App (Cinder) → CinderApp → DrawingApp → AIDrawingApp
 ## Project Structure
 
 ```
-AiDrawing/
+ai-drawing/
 ├── src/                                 # Source code
 │   ├── main.cpp                         # Application entry point
 │   ├── AIDrawingApp.cpp/.h              # Main application class with AI integration
@@ -167,7 +167,7 @@ AiDrawing/
 │   ├── ThreadSafeList.*                 # Thread-safe data structures
 │   └── CinderConsole.cpp/.h             # Console utilities
 ├── external/                            # External dependencies (git submodules)
-│   └── OllamaClient/                    # C++ client for Ollama API
+│   └── ollama-client/                    # C++ client for Ollama API
 ├── vc2022/                              # Visual Studio 2022 project files
 │   ├── AIDrawing.sln                    # Solution file
 │   ├── AIDrawing.vcxproj                # Project file
@@ -191,16 +191,16 @@ AiDrawing/
 2. **Cinder Framework** — Download from [libcinder.org](https://libcinder.org/) and include the Spout block
 3. **Ollama** — Install from [ollama.com](https://ollama.com/)
 4. **LLaVA model** — Run `ollama pull llava:7b` to download vision model
-5. [**StreamDiffusionSpoutService**](https://github.com/olwal/StreamDiffusionSpoutService) — Real-time image generation server (separate application, clone and run separately)
+5. [**StreamDiffusionSpoutService**](https://github.com/olwal/streamdiffusion-spout-service) — Real-time image generation server (separate application, clone and run separately)
 6. [**Spout**](https://spout.zeal.co/) — GPU texture sharing (included via Cinder Spout block)
 
-**Note:** [OllamaClientCinder](https://github.com/olwal/OllamaClient) is included automatically as a git submodule.
+**Note:** [OllamaClientCinder](https://github.com/olwal/ollama-client) is included automatically as a git submodule.
 
 ### Building
 
 1. **Clone this repository with submodules:**
    ```bash
-   git clone --recursive https://github.com/olwal/AiDrawing.git
+   git clone --recursive https://github.com/olwal/ai-drawing.git
    ```
 
    *If you already cloned without `--recursive`, initialize submodules:*
