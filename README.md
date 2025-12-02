@@ -1,5 +1,7 @@
 # AIDrawing: Real-time Human-AI Collaborative Drawing
 
+<img src="assets/earth_thumb.png" width="480"/>  <img src="assets/earth_4x_0.25scale.gif" width="480"/>
+
 An interactive C++ drawing application that combines AI-powered visual completion through real-time canvas interpretation and image generation.  
 Built with the Cinder framework, this application allows users to draw naturally without entering prompts — an AI model analyzes the artwork in real time and collaborates with an image diffusion pipeline (**StreamDiffusion**) to *augment and auto-complete* the drawing.
 
